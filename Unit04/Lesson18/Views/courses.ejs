@@ -1,0 +1,53 @@
+<h1 class="courses-title">Our Starter Baking Courses</h1>
+
+<div class="courses-list">
+
+  <div class="course-item">
+    <img src="/images/lemon.jpg" alt="Carrot Cake" class="course-img">
+    <h2>Carrot Cake</h2>
+    <p>Cost: $50</p>
+  </div>
+
+  <div class="course-item">
+    <img src="/images/fudge.jpg" alt="Chcolate Fudge Cake" class="course-img">
+    <h2>Choclate Fudge Cake</h2>
+    <p>Cost: $25</p>
+  </div>
+
+  <div class="course-item">
+    <img src="/images/carrot.jpg" alt="Lemon Layer Cake" class="course-img">
+    <h2>Lemon Layer Cake</h2>
+    <p>Cost: $10</p>
+  </div>
+
+</div>
+
+<style>
+/* Center the heading */
+.courses-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.courses-list {
+  display: flex;
+  flex-direction: row; /* horizontal layout */
+  gap: 20px;           /* space between courses */
+  justify-content: center; /* center courses horizontally */
+  flex-wrap: wrap;      /* wrap to next line on small screens */
+  width: 100%;
+}
+
+.course-item {
+  flex: 0 1 30%; /* each course takes roughly 30% of the row */
+  text-align: center;
+}
+
+.course-img {
+  width: 250px;  /* fixed width */
+  height: 150px; /* fixed height */
+  object-fit: cover; /* crops image to fit box */
+  display: block;
+  margin: 0 auto 10px;
+}
+</style>

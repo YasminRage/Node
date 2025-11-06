@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1" />
+    <title>Confetti Cuisine</title>
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <link rel="stylesheet" href="/confetti_cuisine.css" />
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div id="nav">
+        <!-- Left-aligned column with site title -->
+        <div class="col-sm nav-align">
+            <h1 id="title">Confetti Cuisine</h1>
+        </div>
+
+        <!-- Right-aligned column with navigation links -->
+        <div class="col-sm nav-align">
+            <!-- Link to Home page -->
+            <a href="/"> <span class="button">Home</span> </a>
+            <!-- Link to Courses page -->
+            <a href="/courses.html"> <span class="button">Courses</span> </a>
+            <!-- Link to Contact page -->
+            <a href="/contact.html"> <span class="button">Contact</span> </a>
+        </div>
+    </div>
+
+    <!-- Main container for contact content -->
+    <div class="container">
+        <!-- Left column with image -->
+        <div class="col-sm-6">
+            <img src="/graph.png" alt="" />
+        </div>
+
+        <!-- Right column with contact form -->
+        <div class="col-sm-6">
+            <h1>Reach out to us!</h1>
+            <p>Enter your email if you're interested to learn more:</p>
+
+            <!-- Contact form that sends a POST request to the home route -->
+            <form class="contact-form" action="/" method="post">
+                <!-- Email input field (required) -->
+                <input type="email" name="email" required />
+                <!-- Submit button -->
+                <input class="button" type="submit" value="submit" />
+            </form>
+
+            <!-- Message displayed after form -->
+            <p>We'll get back to you soon!</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

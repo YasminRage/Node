@@ -1,0 +1,55 @@
+
+subscriber.create({
+name: "Jon",
+email: "jon@jonwexler.com",
+postcode: "En3 6LE",
+})
+
+
+
+// 1️⃣ Remove any old data (optional, for clean testing)
+Subscriber.deleteMany({})
+  .then(() => Course.deleteMany({}))
+  .then(() => {
+    console.log("✅ Cleared old subscribers and courses.");
+
+    // 2️⃣ Create a new subscriber
+    return Subscriber.create({
+      name: "Yasmin",
+      email: "yasmin@example.com",
+      zipCode: 54321
+    });
+  })
+  .then(subscriber => {
+    testSubscriber = subscriber;
+    console.log(` Created subscriber: ${subscriber.name}`);
+  })
+  // 3️⃣ Create a new course
+  .then(() => {
+    return Course.create({
+      title: "Tomato Land",
+      description: "Locally farmed tomatoes only",
+      zipCode: 12345,
+      items: ["cherry", "heirloom"]
+    });
+  })
+  .then(course => {
+    testCourse = course;
+    console.log(` Created course: ${course.title}`);
+
+    // 4️⃣ Associate the course with the subscriber
+    testSubscriber.courses.push(testCourse);
+    return testSubscriber.save();
+  })
+  // 5️⃣ Populate and display results
+  .then(() => Subscriber.populate(testSubscriber, "courses"))
+  .then(subscriber => {
+    console.log("🎓 Subscriber with populated courses:");
+    console.log(subscriber);
+  })
+  .catch(error => console.error("❌ Error:", error))
+  .finally(() => mongoose.connection.close());
+
+
+
+  //
