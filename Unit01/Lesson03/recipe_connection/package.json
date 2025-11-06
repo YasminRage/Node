@@ -1,0 +1,22 @@
+{
+  "name": "recipe_connection",
+  "version": "1.0.0",
+  "description": "App to share cooking recipes",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YasminRage/node.git"
+  },
+  "author": "Yasmin Rage",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YasminRage/node/issues"
+  },
+  "homepage": "https://github.com/YasminRage/node#readme",
+  "dependencies": {
+    "cities": "^2.0.0"
+  }
+}
