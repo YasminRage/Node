@@ -1,0 +1,19 @@
+// npm command reference:
+
+// npm init
+// Initializes a Node.js application and creates a package.json file
+
+// npm install <package>
+// Installs a Node.js package
+
+// npm publish
+// Saves and uploads a package you build to the npm package community
+
+// npm start
+// Runs your Node.js application (provided that the package.json file is set up to use this command)
+
+// npm stop
+// Quits the running application
+
+// npm docs <package>
+// Opens the likely documentation page (web page) for your specified package
