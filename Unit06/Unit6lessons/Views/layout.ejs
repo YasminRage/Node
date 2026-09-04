@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1">
+    <title>Yasmin's Bakery</title>
+    <link rel="shortcut cat" type="image/png" href="/images/cat.jpg" />
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/Yasmin_Bakery.css">
+</head>
+
+<body>
+    <div id="nav">
+        <div class="col-sm nav-align">
+            <h1 id="title">Yasmin's Baking Course</h1>
+        </div>
+        <div class="col-sm nav-align">
+            <a href="/">
+                <span class="button">Home</span>
+            </a>
+            <a href="/courses">
+                <span class="button">Courses</span>
+            </a>
+            <a href="/course">
+                <span class="button">Manage Courses</span>
+            </a>
+            <a href="/contact">
+                <span class="button">Contact</span>
+            </a>
+            <button id="modal-button" type="button" data-toggle="modal" data-target="#myModal">
+                <span class="button">Latest Courses</span>
+            </button>
+            <% if (loggedIn) { %>
+                <a href="<%= `/user/${currentUser._id}` %>">
+                    <span class="button">Logged in as <%= currentUser.fullName %></span>
+                </a>
+                <a href="/user/logout">
+                    <span class="button">Log out</span>
+                </a>
+            <% } else { %>
+                <a href="/user/new">
+                    <span class="button">Sign Up</span>
+                </a>
+                <a href="/user/login">
+                    <span class="button">Log In</span>
+                </a>
+            <% } %>
+        </div>
+
+    </div>
+    <%- include("course/_courseModal") %>
+    <%- body %>
+    <div class="flashes">
+        <% if (flashMessages) { %>
+            <% if (flashMessages.success) { %>
+                <div class="flash success"><%= flashMessages.success %></div>
+            <% } else if (flashMessages.error) { %>
+                <div class="flash error"><%= flashMessages.error %></div>
+            <% } %>
+        <% } %>
+    </div>
+
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/courseModal.js"></script>
+</body>
+
+</html>

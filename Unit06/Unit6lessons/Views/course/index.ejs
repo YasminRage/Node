@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 class="page-title">Our Courses</h1>
+  <a class="btn-edit" href="/course/new">+ Add a Course</a>
+  <table class="bakery-table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Cost</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% courses.forEach(course => { %>
+        <tr>
+          <td><a href="<%= `/course/${course._id}` %>"><%= course.title %></a></td>
+          <td>$<%= course.cost %></td>
+          <td><a class="btn-edit" href="<%= `/course/${course._id}/edit` %>">Edit</a></td>
+          <td>
+            <a class="btn-delete" href="<%= `/course/${course._id}/delete?_method=DELETE` %>"
+               onclick="return confirm('Are you sure you want to delete this course?')">Delete</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>

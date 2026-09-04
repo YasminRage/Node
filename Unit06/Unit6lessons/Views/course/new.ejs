@@ -1,0 +1,18 @@
+<div class="data-form">
+  <form action="/course/create" method="POST">
+    <h2>Add a new course</h2>
+    <label for="inputTitle">Title</label>
+    <input type="text" name="title" id="inputTitle" placeholder="Course title" required>
+
+    <label for="inputDescription">Description</label>
+    <textarea name="description" id="inputDescription" placeholder="Course description" required></textarea>
+
+    <label for="inputMaxStudents">Max Students</label>
+    <input type="number" name="maxStudents" id="inputMaxStudents" placeholder="Max students" required>
+
+    <label for="inputCost">Cost</label>
+    <input type="number" name="cost" id="inputCost" placeholder="Cost" required>
+
+    <button type="submit">Add Course</button>
+  </form>
+</div>

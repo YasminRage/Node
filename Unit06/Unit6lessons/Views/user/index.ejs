@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="page-title">Our Users</h1>
+  <table class="bakery-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+          <td><a href="<%= `/user/${user._id}` %>"><%= user.fullName %></a></td>
+          <td><%= user.email %></td>
+          <td><a class="btn-edit" href="<%= `/user/${user._id}/edit` %>">Edit</a></td>
+          <td>
+            <a class="btn-delete" href="<%= `/user/${user._id}/delete?_method=DELETE` %>"
+               onclick="return confirm('Are you sure you want to delete this record?')">Delete</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>

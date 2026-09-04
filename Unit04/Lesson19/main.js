@@ -8,7 +8,7 @@ const errorController = require("./Controllers/errorController");
 const subscribersController = require("./Controllers/subscribersController");
 const mongoose = require("mongoose");
 const Subscriber = require("./Models/subscriber")
-const usersController = require("./Controllers/userController");
+const userController = require("./Controllers/userController");
 const db = mongoose.connection;
 mongoose.Promise = global.Promise;
 
@@ -35,10 +35,10 @@ app.post("/contact", homeController.postedSignUpForm);
 app.get("/contact", subscribersController.getSubscriptionPage);
 app.post("/subscribe", subscribersController.saveSubscriber);
 app.get("/subscribers", subscribersController.getAllSubscribers);
-app.get("/users", usersController.index);
-router.get("/users/new", usersController.new);
-router.post("/users/create", usersController.create,usersController.redirectView);
-
+app.get("/user", userController.index, userController.indexView);
+app.get("/user/new", userController.new);
+app.post("/user/create", userController.create, userController.redirectView);
+app.get("/user/:id", userController.show, userController.showView);
 
 
 //Responds to POST request @ specified path 

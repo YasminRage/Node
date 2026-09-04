@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="page-title">Our Subscribers</h1>
+  <table class="bakery-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% subscribers.forEach(subscriber => { %>
+        <tr>
+          <td><a href="<%= `/subscriber/${subscriber._id}` %>"><%= subscriber.name %></a></td>
+          <td><%= subscriber.email %></td>
+          <td><a class="btn-edit" href="<%= `/subscriber/${subscriber._id}/edit` %>">Edit</a></td>
+          <td>
+            <a class="btn-delete" href="<%= `/subscriber/${subscriber._id}/delete?_method=DELETE` %>"
+               onclick="return confirm('Are you sure you want to delete this subscriber?')">Delete</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>

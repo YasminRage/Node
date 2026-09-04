@@ -1,0 +1,20 @@
+<h1>User Data for <%= user.fullName %></h1>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <td><%= user.fullName %></td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td><%= user.email %></td>
+  </tr>
+  <tr>
+    <th>Postcode</th>
+    <td><%= user.postcode %></td>
+  </tr>
+</table>
+
+<% if (user.subscribedAccount) { %>
+    <h4 class="center">This user has a subscribed account.</h4>
+<% } %>

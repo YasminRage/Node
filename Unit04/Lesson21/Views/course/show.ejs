@@ -1,0 +1,9 @@
+<h1><%= course.title %></h1>
+<table class="bakery-table">
+  <tr><th>Description</th><td><%= course.description %></td></tr>
+  <tr><th>Max Students</th><td><%= course.maxStudents %></td></tr>
+  <tr><th>Cost</th><td>$<%= course.cost %></td></tr>
+</table>
+
+<div><a href="/course">View all courses</a></div>
+<div><a href="<%= `/course/${course._id}/edit` %>">Edit Course</a></div>

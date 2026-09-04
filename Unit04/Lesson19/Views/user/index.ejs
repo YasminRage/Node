@@ -10,9 +10,10 @@
   <tbody>
     <% users.forEach(user => { %>
       <tr>
+        <a href="<%= `/user/${user._id}` %>"></a>
         <td><%= user.fullName %></td>
         <td><%= user.email %></td>
-        <td><%= user.zipCode %></td>
+        <td><%= user.postcode %></td>
       </tr>
     <% }); %>
   </tbody>

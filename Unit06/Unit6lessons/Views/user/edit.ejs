@@ -1,0 +1,11 @@
+<div class="data-form">
+  <form method="POST" action="<%= `/user/${user._id}/update?_method=PUT` %>">
+    <h2>Edit user:</h2>
+    <input type="text" name="first" value="<%= user.name.first %>">
+    <input type="text" name="last" value="<%= user.name.last %>">
+    <input type="password" name="password" value="<%= user.password %>" required>
+    <input type="email" name="email" value="<%= user.email %>" required>
+    <input type="text" name="postcode" value="<%= user.postcode %>" required>
+    <button type="submit">Update</button>
+  </form>
+</div>
